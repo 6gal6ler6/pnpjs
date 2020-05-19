@@ -86,7 +86,7 @@ public render(): void {
 You can also use the AdalClient to execute AAD authenticated requests to any API which is properly configured to accept the incoming tokens. This approach will only work within SharePoint Framework >= 1.6. Here we call the SharePoint REST API without the sp library as an example.
 
 ```TypeScript
-import { FetchOptions } from "@pnp/common";
+import { IFetchOptions } from "@pnp/common";
 import { AdalClient } from "@pnp/adaljsclient";
 import { ODataDefaultParser } from "@pnp/odata";
 
@@ -98,7 +98,7 @@ public render(): void {
   const client = AdalClient.fromSPFxContext(this.context);
 
   // setup the request options
-  const opts: FetchOptions = {
+  const opts: IFetchOptions = {
     method: "GET",
     headers: {
       "Accept": "application/json",
