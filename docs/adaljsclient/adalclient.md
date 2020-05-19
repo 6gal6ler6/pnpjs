@@ -88,7 +88,7 @@ You can also use the AdalClient to execute AAD authenticated requests to any API
 ```TypeScript
 import { FetchOptions } from "@pnp/common";
 import { AdalClient } from "@pnp/adaljsclient";
-import { ODataDefaultParser } from "@pnp/odata";
+import { JSONParser } from "@pnp/odata";
 
 // ...
 
@@ -110,7 +110,7 @@ public render(): void {
 
     // create a parser to convert the response into JSON.
     // You can create your own, at this point you have a fetch Response to work with
-    const parser = new ODataDefaultParser();
+    const parser = new JSONParser();
 
     parser.parse(response).then(json => {
       this.domElement.innerHTML = JSON.stringify(json);
